@@ -46,3 +46,7 @@ body {
   font-weight: bold;
   color: #333;
 }
+
+.feedback-message {
+  text-align: center;
+}

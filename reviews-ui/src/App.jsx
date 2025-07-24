@@ -5,7 +5,7 @@ import Rating from "./components/Rating";
 const App = () => {
   return (
     <>
-      <Rating />
+      <Rating heading='Rate you experience' color='black'/>
 
 
     </>
