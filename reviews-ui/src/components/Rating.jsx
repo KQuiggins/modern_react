@@ -25,8 +25,15 @@ const Rating = ({ heading, color }) => {
             <div className="stars">
                 {stars.map((star, index) => {
                     return (
-                        <Star star={star} key={star}/>
-                        
+                        <Star
+                            star={star}
+                            key={star}
+                            color={color}
+                            rating={rating}
+                            hover={hover}
+                            testFunction={() => console.log(`You clicked on star number ${index + 1}`)}
+                        />
+
                     );
                 })}
             </div>
