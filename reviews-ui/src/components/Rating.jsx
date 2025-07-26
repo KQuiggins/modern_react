@@ -34,6 +34,7 @@ const Rating = ({ heading, color }) => {
                             hover={hover}
                             ratingClick={setRating}
                             hoverEnter={setHover}
+                            hoverLeave={() => setHover(null)}
                         />
 
                     );

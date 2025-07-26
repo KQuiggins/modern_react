@@ -4,15 +4,15 @@ const Star = ({
     hover,
     color,
     ratingClick,
-    hoverEnter }) => {
+    hoverEnter,
+    hoverLeave
+ }) => {
     return (
         <span
             onClick={() => ratingClick(star)}
             style={{ color: star <= (hover || rating) ? color : '#ccc', cursor: 'pointer' }}
-            onMouseEnter={() => {
-                console.log("hoverEnter called with", star);
-                hoverEnter(star);
-            }}
+            onMouseEnter={() => {hoverEnter(star)}}
+            onMouseLeave={hoverLeave}
         >
             {'\u2605'}
         </span>);
