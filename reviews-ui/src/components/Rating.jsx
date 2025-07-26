@@ -16,6 +16,7 @@ const Rating = ({ heading, color }) => {
 
     const stars = Array.from({ length: 5 }, (_, i) => i + 1);
 
+
     const clicked = (index) => {
         console.log(`You clicked on star number ${index + 1}`);
     }
@@ -31,14 +32,15 @@ const Rating = ({ heading, color }) => {
                             color={color}
                             rating={rating}
                             hover={hover}
-                            testFunction={() => console.log(`You clicked on star number ${index + 1}`)}
+                            ratingClick={setRating}
+                            hoverEnter={setHover}
                         />
 
                     );
                 })}
             </div>
             <p className="feedback-message">
-                {rating > 0 && <p className='feedback'>{feedbackMessages[rating - 1]} </p>}
+                {rating > 0 && <span className='feedback'>{feedbackMessages[rating - 1]} </span>}
             </p>
 
         </>

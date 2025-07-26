@@ -1,10 +1,21 @@
-const Star = ({ star, rating, hover, color, testFunction }) => {
+const Star = ({
+    star,
+    rating,
+    hover,
+    color,
+    ratingClick,
+    hoverEnter }) => {
     return (
         <span
-            onClick={testFunction}
+            onClick={() => ratingClick(star)}
+            style={{ color: star <= (hover || rating) ? color : '#ccc', cursor: 'pointer' }}
+            onMouseEnter={() => {
+                console.log("hoverEnter called with", star);
+                hoverEnter(star);
+            }}
         >
             {'\u2605'}
-        </span>  );
-}
+        </span>);
+};
 
 export default Star;
