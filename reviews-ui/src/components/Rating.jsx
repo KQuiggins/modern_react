@@ -19,10 +19,18 @@ const Rating = ({ heading, color }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if ( rating > 0) {
+        if (rating > 0) {
             setSubmitted(true);
 
         }
+    };
+
+    const closeModal = () => {
+        console.log(`You closed the modal after rating ${rating} star${rating > 1 ? 's' : ''}`);
+        setSubmitted(false);
+        setRating(0);
+        setHover(0);
+
     };
 
 
@@ -57,6 +65,17 @@ const Rating = ({ heading, color }) => {
                     className='submit-btn'
                     onClick={handleSubmit} disabled={rating === 0}>Submit</button>
             </div>
+
+            {/* Modal */}
+            {submitted && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h3>Thank you for your feedback!</h3>
+                        <p>You rated us {rating} star{rating > 1 ? "s" : ''}</p>
+                        <button className='close-btn' onClick={closeModal}>Close</button>
+                    </div>
+                </div>
+            )}
 
         </>
     );
