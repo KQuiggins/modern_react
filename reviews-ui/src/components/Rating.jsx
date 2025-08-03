@@ -1,4 +1,5 @@
 import Star from './Star';
+import Modal from './Modal';
 import { useState } from 'react';
 
 
@@ -66,16 +67,11 @@ const Rating = ({ heading, color }) => {
                     onClick={handleSubmit} disabled={rating === 0}>Submit</button>
             </div>
 
-            {/* Modal */}
-            {submitted && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <h3>Thank you for your feedback!</h3>
-                        <p>You rated us {rating} star{rating > 1 ? "s" : ''}</p>
-                        <button className='close-btn' onClick={closeModal}>Close</button>
-                    </div>
-                </div>
-            )}
+            <Modal
+                isOpen={submitted}
+                onClose={closeModal}
+                rating={rating}
+            />
 
         </>
     );
