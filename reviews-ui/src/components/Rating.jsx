@@ -1,5 +1,6 @@
 import Star from './Star';
 import Modal from './Modal';
+import Button from './Button';
 import { useState } from 'react';
 
 
@@ -62,9 +63,14 @@ const Rating = ({ heading, color }) => {
                 <p className="feedback-message">
                     {rating > 0 && <span className='feedback'>{feedbackMessages[rating - 1]} </span>}
                 </p>
-                <button
-                    className='submit-btn'
-                    onClick={handleSubmit} disabled={rating === 0}>Submit</button>
+                
+                <Button
+                    className="submit-btn"
+                    disabled={rating === 0}
+                    onClick={handleSubmit}
+                >
+                    Submit
+                </Button>
             </div>
 
             <Modal
