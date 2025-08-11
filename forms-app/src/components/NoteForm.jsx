@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const NoteForm = () => {
+const NoteForm = ({ notes, setNotes }) => {
 
     const [formData, setFormData] = useState({
         title: "",
@@ -11,7 +11,23 @@ const NoteForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        if (!formData.title || !formData.description) {
+            alert("Please fill in all fields");
+            return;
+        }
+
+        const newNote = {
+            id: Date.now(),
+            ...formData
+        };
+        setNotes([newNote, ...notes]);
+        
+        setFormData({
+            title: "",
+            priority: "Medium",
+            category: "Work",
+            description: ""
+        });
     }
 
     const handleChange = (e) => {
