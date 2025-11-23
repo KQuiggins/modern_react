@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0e1117;
   color: #f0f0f0;
   line-height: 1.6;
@@ -270,5 +270,117 @@ a {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* About specific styles (appended) */
+.about-hero {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.about-hero h1 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.lede {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(180deg, #58a6ff, #2978d6);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(41, 120, 214, 0.18);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #9fb7db;
+  box-shadow: none;
+}
+
+.about-section {
+  margin-top: 1.25rem;
+  background: transparent;
+}
+
+.about-features ul {
+  list-style: disc;
+  margin-left: 1.25rem;
+  color: #d0d7de;
+}
+
+.about-tech .tech-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.about-tech .tech-list span {
+  background: #0f1720;
+  color: #9fb7db;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.team-card {
+  background: #0f1419;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.team-card h3 {
+  margin-bottom: 0.25rem;
+}
+
+.team-card p {
+  color: #c7ced6;
+  margin-bottom: 0.5rem;
+}
+
+.team-card a {
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+.about-footnote {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #8b949e;
+}
+
+@media (min-width: 900px) {
+  .about {
+    max-width: 900px;
+    padding: 3rem;
   }
 }
