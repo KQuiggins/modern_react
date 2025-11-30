@@ -3,6 +3,7 @@ import HomePage from "./pages/home.jsx";
 import AboutPage from "./pages/about.jsx";
 import Header from "./components/Header.jsx";
 import { Routes, Route } from "react-router";
+import NotFoundPage from "./pages/not-found.jsx";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
             }
           />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
