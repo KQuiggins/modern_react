@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router";
+import Spinner from "../components/Spinners";
 
 const COIN_DETAIL_URL = import.meta.env.VITE_COIN_DETAIL_URL;
 
@@ -25,7 +26,7 @@ const CoinDetailsPage = () => {
             } catch (error) {
                 setError(error.message);
             } finally {
-                setLoading(false);
+               setLoading(false);
             }
         };
 
@@ -41,7 +42,7 @@ const CoinDetailsPage = () => {
                 {coin ? `${coin.name} (${coin.symbol.toUpperCase()})` : "Coin Not Found"}
             </h1>
 
-            {loading && <p>"Loading..."</p>}
+            {loading && <Spinner />}
                 {error && <p className="error-message">❌ {error}</p>}
 
                 {!loading && !error && (

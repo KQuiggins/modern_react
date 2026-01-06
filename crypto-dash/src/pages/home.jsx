@@ -2,6 +2,7 @@ import CoinCard from "../components/CoinCard";
 import LimitSelector from "../components/LimitSelector";
 import FilterInput from "../components/FilterInput";
 import SortSelector from "../components/SortSelector";
+import Spinner from "../components/Spinners";
 
 const HomePage = ({
     coins,
@@ -36,10 +37,10 @@ const HomePage = ({
     }
   });
 
-    return ( 
+    return (
         <div>
       <h1>🚀🧑‍🚀 Crypto Dashboard</h1>
-      {loading && <p>Loading...</p>}
+      {loading && <Spinner color="white"/>}
       {error && <p>Error: {error}</p>}
       <div className="top-controls">
         <SortSelector sortBy={sortBy} onSortChange={setSortBy} />
@@ -57,5 +58,5 @@ const HomePage = ({
     </div>
      );
 }
- 
+
 export default HomePage;
