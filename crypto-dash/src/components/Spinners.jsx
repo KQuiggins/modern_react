@@ -6,7 +6,7 @@ const override = {
     borderColor: 'red',
 };
 
-const Spinner = ({ color = 'cyan', size = '150' }) => {
+const Spinner = ({ color = 'cyan', size = '150px' }) => {
     return (
         <div>
             <PacmanLoader

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router";
 import Spinner from "../components/Spinners";
+import CoinChart from "../components/CoinChart";
 
 const COIN_DETAIL_URL = import.meta.env.VITE_COIN_DETAIL_URL;
 
@@ -68,7 +69,10 @@ const CoinDetailsPage = () => {
                             <h4>All-Time High: ${coin.market_data.ath.usd.toLocaleString()} on {new Date(coin.market_data.ath_date.usd).toLocaleDateString()}</h4>
                             <h4>All-Time Low: ${coin.market_data.atl.usd.toLocaleString()} on {new Date(coin.market_data.atl_date.usd).toLocaleDateString()}</h4>
                             <h4>Last Updated: {new Date(coin.last_updated).toLocaleString()}</h4>
-                            <div className="coin-details-links">
+                            
+                        </div>
+                        <CoinChart coinId={coin.id} />
+                        <div className="coin-details-links">
                                  {coin.links.homepage[0] && (
                                 <p>
                                 🌐{' '}
@@ -99,11 +103,6 @@ const CoinDetailsPage = () => {
                                 <p>Categories: {coin.categories.join(", ")}</p>
                             )}
                             </div>
-
-
-
-
-                        </div>
                     </>
                 )}
                 {!loading && !error && !coin && <p>Coin not found.</p>}
