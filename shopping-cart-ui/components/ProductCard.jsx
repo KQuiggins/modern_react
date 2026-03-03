@@ -1,4 +1,5 @@
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
+  
   return (
     <div
       
