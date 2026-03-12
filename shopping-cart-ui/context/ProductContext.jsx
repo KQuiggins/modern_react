@@ -1,21 +1,20 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
-export const ProductContext = createContext();
+const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch("/api/products");
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
-
 
         setProducts(data);
       } catch (error) {
@@ -26,7 +25,6 @@ export const ProductProvider = ({ children }) => {
     };
 
     fetchProducts();
-
   }, []);
 
   return (
@@ -35,3 +33,7 @@ export const ProductProvider = ({ children }) => {
     </ProductContext.Provider>
   );
 };
+
+export function useProducts() {
+  return useContext(ProductContext)
+}
