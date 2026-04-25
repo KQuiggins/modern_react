@@ -9,5 +9,16 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+
+  const time = new Date().toISOString()
+
+  if (typeof window === 'undefined') {
+    console.log(`Server rendered at ${time}`);
+
+  } else {
+    console.log(`Client hydration at ${time}`);
+    
+  }
+
   return <section>My App</section>;
 }
